@@ -1,11 +1,15 @@
 const Router = require('@koa/router');
 const router= new Router();
 
+const { myLogging } = require('./middleware/logging');
+
 const webController = require('./web/controller');
 const apiUserController = require('./api/user/controller');
 const apiFeedController = require('./api/feed/controller');
 
-router.get('/',webController.home);
+router.use(myLogging); // 어떤 페이지를 들어가도 찍어준다
+
+router.get('/', webController.home);
 router.get('/page/:page', webController.page);
 
 //router.get('/date',)

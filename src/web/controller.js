@@ -6,7 +6,7 @@ exports.home = (ctx, next) => {
 
 // 약관 개인 정보처리방침 등 정적 페이지
 
-exports.page = (ctx, next) => {
+exports.page = async (ctx, next) => {
     // let name = ctx.params.name; // 아래와 완전 같다
     //let { name } = ctx.params;
     let page = ctx.params.page;
@@ -18,7 +18,11 @@ exports.page = (ctx, next) => {
         case 'policy':
             content = "개인정보 처리방침";
             break;
+        default:
+            content = "오류!";
+            break;
     }
-    ctx.body= content;
+    //ctx.body= content;    
+    await ctx.render('index', {content});
 }
 //module.exports = Router;
