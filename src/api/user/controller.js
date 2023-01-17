@@ -30,7 +30,7 @@ exports.login = async(ctx,next) => {
 
 let generteToken = (payload) =>{
     return new Promise((resolve, reject) =>{
-        jwt.sign(payload, process.env.APP_EKY, (error, token) =>{
+        jwt.sign(payload, process.env.APP_KEY, (error, token) =>{
             if(error) { reject(error);}
             resolve(token);
         })
