@@ -8,7 +8,6 @@ exports.index = (ctx,next) =>{
     //query.color;
     //query.size;
     //query.count
-
     //let { color, size, count } = ctx.query;
     ctx.body = query;
     //ctx.body = '피드 리스트';
