@@ -7,11 +7,9 @@ const fs = require('fs')
 exports.upload = async(ctx) => {
     let file = ctx.request.file;
     // ctx.body = file;
-
 //    const query = `INSERT INTO files
 //    (original_name, file_path, file_size)
 //    VALUES (?,?,?)`;
-
     let { affectedRows, insertId } = await pool(query, [file.originalname,file.path,file.size]);
     if(affectedRows > 0){
         ctx.body = {

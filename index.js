@@ -21,22 +21,7 @@ render(app,{
 router.use(require('./src/routes').routes());
 app.use(require('koa-static')(`${__dirname}/public`));
 app.use(router.routes());
-app.use(router.allowedMethods());/*
-router.get('/',(ctx,next) => {
-    ctx.body = 'Hello wwwworasdffaiviinicnld';
-});
-router.get('/sitemap',(ctx,next) => {
-    ctx.body = '사이트맵';
-})
-// :name 은 파라미터
-router.get('/page/:name', (ctx,next) => {
-    let name = ctx.params.name;
-    ctx.body = `${name} 페이지`;
-})*/
-
-//app.use(ctx => {
- //   ctx.body = 'Hello Worlddddddddd';
-//});
+app.use(router.allowedMethods());
 
 // 웹서버 실행
 app.listen(port,() =>{

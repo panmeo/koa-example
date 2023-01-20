@@ -1,7 +1,7 @@
 // 사이트 메인 페이지
 exports.home = (ctx, next) => {
     console.log("홈페이지 호출");
-    ctx.bdoy= 'Hello World';
+    ctx.body= 'Hello World';
 }
 
 // 약관 개인 정보처리방침 등 정적 페이지
